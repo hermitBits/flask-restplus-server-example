@@ -32,7 +32,7 @@ def test_modifying_user_info_by_owner(flask_app_client, regular_user, db):
     assert 'password' not in response.json.keys()
 
     # Restore original state
-    from app.modules.users.models import User
+    from application.modules.users.models import User
 
     user1_instance = User.query.get(response.json['id'])
     assert user1_instance.username == regular_user.username
@@ -86,7 +86,7 @@ def test_modifying_user_info_by_admin(flask_app_client, admin_user, regular_user
     assert 'password' not in response.json.keys()
 
     # Restore original state
-    from app.modules.users.models import User
+    from application.modules.users.models import User
 
     user1_instance = User.query.get(response.json['id'])
     assert user1_instance.username == regular_user.username

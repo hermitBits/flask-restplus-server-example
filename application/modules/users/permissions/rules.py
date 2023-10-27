@@ -8,7 +8,7 @@ from flask_login import current_user
 from flask_restplus._http import HTTPStatus
 from permission import Rule as BaseRule
 
-from app.extensions.api import abort
+from application.extensions.api import abort
 
 
 class DenyAbortMixin(object):

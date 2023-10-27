@@ -6,7 +6,7 @@ Team database models
 
 from sqlalchemy_utils import Timestamp
 
-from app.extensions import db
+from application.extensions import db
 
 
 class TeamMember(db.Model):

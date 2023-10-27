@@ -9,8 +9,8 @@ from flask_marshmallow import base_fields
 from flask_restplus_patched import PostFormParameters
 from marshmallow import validates, ValidationError
 
-from app.extensions import api
-from app.extensions.api.parameters import PaginationParameters
+from application.extensions import api
+from application.extensions.api.parameters import PaginationParameters
 
 
 class ListOAuth2ClientsParameters(PaginationParameters):

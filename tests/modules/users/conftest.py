@@ -6,7 +6,7 @@ from flask_login import current_user, login_user, logout_user
 
 from tests import utils
 
-from app.modules.users import models
+from application.modules.users import models
 
 
 @pytest.yield_fixture()

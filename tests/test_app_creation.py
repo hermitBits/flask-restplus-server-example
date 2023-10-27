@@ -2,7 +2,7 @@
 # pylint: disable=missing-docstring
 import pytest
 
-from app import CONFIG_NAME_MAPPER, create_app
+from application import CONFIG_NAME_MAPPER, create_app
 
 
 def test_create_app():

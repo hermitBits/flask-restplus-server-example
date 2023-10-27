@@ -111,7 +111,7 @@ if __name__ == '__main__':
 Save it, install the dependencies, and run it:
 
 ```
-$ pip install -r app/requirements.txt
+$ pip install -r application/requirements.txt
 $ python server.py
 ```
 
@@ -197,7 +197,7 @@ app/
         └── schemas.py
 ```
 
-* `app/requirements.txt` - The list of Python (PyPi) requirements.
+* `application/requirements.txt` - The list of Python (PyPi) requirements.
 * `app/__init__.py` - The entrypoint to this RESTful API Server example
   application (Flask application is created here).
 * `app/extensions` - All extensions (e.g. SQLAlchemy, OAuth2) are initialized
@@ -540,7 +540,7 @@ Verified compatible projects:
   
 #### flask-limiter
 
-1. Add `flask-limiter` to end of the `app/requirements.txt` file, so it gets
+1. Add `flask-limiter` to end of the `application/requirements.txt` file, so it gets
 installed when the application is deployed.
 2. Apply the relevant changes to `app/extensions/__init__.py`:
 
@@ -634,7 +634,7 @@ common migration commands are `app.db.upgrade` (it is automatically run on
 
 You can use [`better_exceptions`](https://github.com/Qix-/better-exceptions)
 package to enable detailed tracebacks. Just add `better_exceptions` to the
-`app/requirements.txt` and `import better_exceptions` in the `app/__init__.py`.
+`application/requirements.txt` and `import better_exceptions` in the `app/__init__.py`.
 
 
 Marshmallow Tricks

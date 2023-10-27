@@ -20,7 +20,7 @@ def export(context, output_format='json', quiet=False):
     # set logging level to ERROR to avoid [INFO] messages in result
     logging.getLogger().setLevel(logging.ERROR)
 
-    from app import create_app
+    from application import create_app
     app = create_app(flask_config_name='testing')
     swagger_content = app.test_client().get('/api/v1/swagger.%s' % output_format).data
     if not quiet:

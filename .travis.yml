@@ -31,7 +31,7 @@ install:
         source "$HOME/virtualenvs/pypy-$PYPY_VERSION/bin/activate"
       fi
   - travis_retry pip install pylint
-  - travis_retry pip install -r app/requirements.txt
+  - travis_retry pip install -r application/requirements.txt
   - travis_retry pip install -r tests/requirements.txt
   - travis_retry pip install pytest-cov coverage coveralls codacy-coverage
 

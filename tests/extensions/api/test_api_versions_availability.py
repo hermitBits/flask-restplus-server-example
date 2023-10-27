@@ -1,6 +1,6 @@
 import pytest
 
-from app.extensions import api
+from application.extensions import api
 
 
 @pytest.mark.parametrize('api_version', [

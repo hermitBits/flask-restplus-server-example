@@ -16,7 +16,7 @@ CONFIG_NAME_MAPPER = {
     'local': 'local_config.LocalConfig',
 }
 
-def create_app(flask_config_name=None, **kwargs):
+def create_app(flask_config_name='development', **kwargs):
     """
     Entry point to the Flask RESTful Server application.
     """

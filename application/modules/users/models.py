@@ -7,7 +7,7 @@ import enum
 
 from sqlalchemy_utils import types as column_types, Timestamp
 
-from app.extensions import db
+from application.extensions import db
 
 
 def _get_is_static_role_property(role_name, static_role):

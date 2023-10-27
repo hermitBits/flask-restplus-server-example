@@ -14,7 +14,7 @@ from flask import Blueprint, request, render_template
 from flask_login import current_user
 from flask_restplus._http import HTTPStatus
 
-from app.extensions import api, oauth2
+from application.extensions import api, oauth2
 
 from .models import OAuth2Client
 

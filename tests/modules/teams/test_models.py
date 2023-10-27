@@ -1,7 +1,7 @@
 # encoding: utf-8
 # pylint: disable=missing-docstring,invalid-name
 
-from app.modules.teams import models
+from application.modules.teams import models
 
 
 def test_TeamMember_check_owner(readonly_user, regular_user, team_for_regular_user):

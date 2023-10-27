@@ -5,7 +5,7 @@ import pytest
 
 @pytest.yield_fixture()
 def team_for_regular_user(db, regular_user, readonly_user):
-    from app.modules.teams.models import Team, TeamMember
+    from application.modules.teams.models import Team, TeamMember
 
     team = Team(title="Regular User's team")
     regular_user_team_member = TeamMember(team=team, user=regular_user, is_leader=True)
@@ -27,6 +27,6 @@ def team_for_nobody(temp_db_instance_helper):
     """
     Create a team that not belongs to regural user
     """
-    from app.modules.teams.models import Team
+    from application.modules.teams.models import Team
     for _ in temp_db_instance_helper(Team(title="Admin User's team")):
         yield _

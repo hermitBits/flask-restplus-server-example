@@ -3,7 +3,7 @@
 
 import json
 
-from app.modules.teams import models
+from application.modules.teams import models
 
 
 def test_new_team_creation(flask_app_client, db, regular_user):

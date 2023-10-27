@@ -7,7 +7,7 @@ Serialization schemas for Team resources RESTful API
 from flask_marshmallow import base_fields
 from flask_restplus_patched import ModelSchema
 
-from app.modules.users.schemas import BaseUserSchema
+from application.modules.users.schemas import BaseUserSchema
 
 from .models import Team, TeamMember
 

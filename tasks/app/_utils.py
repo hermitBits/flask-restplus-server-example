@@ -54,7 +54,7 @@ def app_context_task(*args, **kwargs):
             """
             app = kwargs.pop('app', None)
             if app is None:
-                from app import create_app
+                from application import create_app
                 app = create_app()
 
             with app.app_context():

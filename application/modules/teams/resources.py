@@ -11,10 +11,10 @@ from flask_login import current_user
 from flask_restplus_patched import Resource
 from flask_restplus._http import HTTPStatus
 
-from app.extensions import db
-from app.extensions.api import Namespace, abort
-from app.modules.users import permissions
-from app.modules.users.models import User
+from application.extensions import db
+from application.extensions.api import Namespace, abort
+from application.modules.users import permissions
+from application.modules.users.models import User
 
 
 from . import parameters, schemas

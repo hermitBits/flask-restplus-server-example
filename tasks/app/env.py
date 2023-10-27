@@ -31,13 +31,13 @@ def enter(context, install_dependencies=True, upgrade_db=True):
     from werkzeug import script
     import flask
 
-    import app
-    flask_app = app.create_app()
+    import application
+    flask_app = application.create_app()
 
     def shell_context():
         context = dict(pprint=pprint.pprint)
         context.update(vars(flask))
-        context.update(vars(app))
+        context.update(vars(application))
         return context
 
     with flask_app.app_context():

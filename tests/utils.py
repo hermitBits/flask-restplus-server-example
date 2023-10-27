@@ -38,8 +38,8 @@ class AutoAuthFlaskClient(FlaskClient):
 
     def open(self, *args, **kwargs):
         if self._user is not None:
-            from app.extensions import db
-            from app.modules.auth.models import OAuth2Client, OAuth2Token
+            from application.extensions import db
+            from application.modules.auth.models import OAuth2Client, OAuth2Token
 
             oauth2_client = OAuth2Client(
                 client_id='OAUTH2_%s' % self._user.username,
@@ -112,7 +112,7 @@ def generate_user_instance(
         user_instance (User) - an not committed to DB instance of a User model.
     """
     # pylint: disable=too-many-arguments
-    from app.modules.users.models import User
+    from application.modules.users.models import User
     if password is None:
         password = '%s_password' % username
     user_instance = User(

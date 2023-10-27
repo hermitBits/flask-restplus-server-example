@@ -13,8 +13,8 @@ import enum
 
 from sqlalchemy_utils.types import ScalarListType
 
-from app.extensions import db
-from app.modules.users.models import User
+from application.extensions import db
+from application.modules.users.models import User
 
 
 class OAuth2Client(db.Model):

@@ -1,6 +1,6 @@
 import pytest
 
-from app import extensions
+from application import extensions
 
 
 @pytest.mark.parametrize('extension_name', [

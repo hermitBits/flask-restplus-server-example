@@ -21,7 +21,7 @@ def create_user(
     """
     Create a new user.
     """
-    from app.modules.users.models import User
+    from application.modules.users.models import User
 
     password = getpass("Enter password: ")
 
@@ -35,7 +35,7 @@ def create_user(
         is_active=is_active
     )
 
-    from app.extensions import db
+    from application.extensions import db
     with db.session.begin():
         db.session.add(new_user)
 
@@ -52,15 +52,15 @@ def create_oauth2_client(
     """
     Create a new OAuth2 Client associated with a given user (username).
     """
-    from app.modules.users.models import User
-    from app.modules.auth.models import OAuth2Client
+    from application.modules.users.models import User
+    from application.modules.auth.models import OAuth2Client
 
     user = User.query.filter(User.username == username).first()
     if not user:
         raise Exception("User with username '%s' does not exist." % username)
 
     if default_scopes is None:
-        from app.extensions.api import api_v1
+        from application.extensions.api import api_v1
         default_scopes = list(api_v1.authorizations['oauth2_password']['scopes'].keys())
 
     oauth2_client = OAuth2Client(
@@ -70,6 +70,6 @@ def create_oauth2_client(
         default_scopes=default_scopes
     )
 
-    from app.extensions import db
+    from application.extensions import db
     with db.session.begin():
         db.session.add(oauth2_client)

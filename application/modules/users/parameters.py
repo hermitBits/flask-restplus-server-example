@@ -11,7 +11,7 @@ from flask_restplus_patched import PostFormParameters, PatchJSONParameters
 from flask_restplus._http import HTTPStatus
 from marshmallow import validates_schema, ValidationError
 
-from app.extensions.api import abort
+from application.extensions.api import abort
 
 from . import schemas, permissions
 from .models import User

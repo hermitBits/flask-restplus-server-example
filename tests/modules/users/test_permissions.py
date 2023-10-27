@@ -5,7 +5,7 @@ import pytest
 
 from werkzeug.exceptions import HTTPException
 
-from app.modules.users import permissions
+from application.modules.users import permissions
 
 
 def test_DenyAbortMixin():

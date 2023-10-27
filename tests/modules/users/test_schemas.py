@@ -1,7 +1,7 @@
 # encoding: utf-8
 # pylint: disable=invalid-name,missing-docstring
 
-from app.modules.users import schemas
+from application.modules.users import schemas
 
 
 def test_BaseUserSchema_dump_empty_input():

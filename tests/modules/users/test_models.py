@@ -3,7 +3,7 @@
 
 import pytest
 
-from app.modules.users import models
+from application.modules.users import models
 
 
 def test_User_repr(user_instance):

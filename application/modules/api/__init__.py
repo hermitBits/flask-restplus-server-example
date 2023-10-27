@@ -6,7 +6,7 @@ Flask-RESTplus API registration module
 
 from flask import Blueprint
 
-from app.extensions import api
+from application.extensions import api
 
 
 def init_app(app, **kwargs):

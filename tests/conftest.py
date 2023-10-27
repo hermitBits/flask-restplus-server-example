@@ -3,13 +3,13 @@ import pytest
 
 from tests import utils
 
-from app import create_app
+from application import create_app
 
 
 @pytest.yield_fixture(scope='session')
 def flask_app():
     app = create_app(flask_config_name='testing')
-    from app.extensions import db
+    from application.extensions import db
 
     with app.app_context():
         db.create_all()
@@ -19,7 +19,7 @@ def flask_app():
 
 @pytest.yield_fixture(scope='session')
 def db(flask_app):
-    from app.extensions import db as db_instance
+    from application.extensions import db as db_instance
     yield db_instance
 
 

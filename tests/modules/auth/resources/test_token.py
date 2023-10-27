@@ -41,7 +41,7 @@ def test_regular_user_can_retrieve_token(
     }
 
     # Clean up
-    from app.modules.auth.models import OAuth2Token
+    from application.modules.auth.models import OAuth2Token
     with db.session.begin():
         assert OAuth2Token.query.filter(OAuth2Token.access_token == response.json['access_token']).delete() == 1
 
@@ -120,7 +120,7 @@ def test_regular_user_can_refresh_token(
     }
 
     # Clean up
-    from app.modules.auth.models import OAuth2Token
+    from application.modules.auth.models import OAuth2Token
     with db.session.begin():
         OAuth2Token.query.filter(
             OAuth2Token.access_token == refresh_token_response.json['access_token']

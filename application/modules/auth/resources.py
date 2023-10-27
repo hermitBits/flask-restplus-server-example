@@ -12,7 +12,7 @@ from flask_restplus_patched import Resource
 from flask_restplus._http import HTTPStatus
 from werkzeug import security
 
-from app.extensions.api import Namespace
+from application.extensions.api import Namespace
 
 from . import schemas, parameters
 from .models import db, OAuth2Client

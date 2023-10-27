@@ -39,7 +39,7 @@ def run(
     if install_dependencies:
         context.invoke_execute(context, 'app.dependencies.install')
 
-    from app import create_app
+    from application import create_app
     app = create_app()
 
     if upgrade_db:

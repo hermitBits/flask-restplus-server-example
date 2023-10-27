@@ -20,7 +20,7 @@ from flask_oauthlib import provider
 from flask_restplus._http import HTTPStatus
 import sqlalchemy
 
-from app.extensions import api, db
+from application.extensions import api, db
 
 
 log = logging.getLogger(__name__)
@@ -34,7 +34,7 @@ class OAuth2RequestValidator(provider.OAuth2RequestValidator):
     """
 
     def __init__(self):
-        from app.modules.auth.models import OAuth2Client, OAuth2Grant, OAuth2Token
+        from application.modules.auth.models import OAuth2Client, OAuth2Grant, OAuth2Token
         self._client_class = OAuth2Client
         self._grant_class = OAuth2Grant
         self._token_class = OAuth2Token
@@ -50,7 +50,7 @@ class OAuth2RequestValidator(provider.OAuth2RequestValidator):
     def _usergetter(self, username, password, client, request):
         # pylint: disable=method-hidden,unused-argument
         # Avoid circular dependencies
-        from app.modules.users.models import User
+        from application.modules.users.models import User
         return User.find_with_password(username, password)
 
     def _tokensetter(self, token, request, *args, **kwargs):

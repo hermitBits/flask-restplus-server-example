@@ -38,7 +38,7 @@ def test_new_user_creation(patch_User_password_scheme, flask_app_client, db):
     assert isinstance(user_id, int)
 
     # Cleanup
-    from app.modules.users.models import User
+    from application.modules.users.models import User
 
     user1_instance = User.query.get(user_id)
     assert user1_instance.username == "user1"
@@ -100,7 +100,7 @@ def test_new_user_creation_without_captcha_but_admin_user(
     assert isinstance(user_id, int)
 
     # Cleanup
-    from app.modules.users.models import User
+    from application.modules.users.models import User
 
     user1_instance = User.query.get(user_id)
     assert user1_instance.username == "user1"
@@ -134,7 +134,7 @@ def test_new_user_creation_duplicate_must_fail(flask_app_client, db):
     assert set(response.json.keys()) >= {'status', 'message'}
 
     # Cleanup
-    from app.modules.users.models import User
+    from application.modules.users.models import User
 
     user1_instance = User.query.get(user_id)
     with db.session.begin():

@@ -11,7 +11,7 @@ from flask_login import current_user
 from flask_restplus_patched import Resource
 from flask_restplus._http import HTTPStatus
 
-from app.extensions.api import Namespace
+from application.extensions.api import Namespace
 
 from . import permissions, schemas, parameters
 from .models import db, User

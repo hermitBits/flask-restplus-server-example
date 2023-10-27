@@ -4,7 +4,7 @@ from mock import Mock
 
 from flask import request
 
-from app.modules import auth
+from application.modules import auth
 
 
 def test_loading_user_from_anonymous_request(flask_app):
