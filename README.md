@@ -701,6 +701,43 @@ class MyObjects(Resource):
         return create_my_object(args)
 ```
 
+DevSecOps Challenge Portal Lacrei
+---------------------------------
+
+Test proposal for integration of the Portal Lacrei volunteer team as DevSecOps, workflow implementation for SAST analysis of the code with the Bandit tool and another tool of the person's choice.
+
+### Pipeline dependencies for checking security and testing code
+
+* [**Bandit**](https://bandit.readthedocs.io/en/latest/) 1.7.5
+* [**Safety**](https://github.com/pyupio/safety) 2.3.5
+* [**Pytest**](https://docs.pytest.org/en/7.4.x/) 7.4.3
+* [**GitHub Actions**](https://github.com/features/actions)
+
+Github Actions was used to create workflow using Bandit and Safety to analyze the code and pytest to test.
+The choice of Github Actions for this service was due to its ease of implementation and flexibility to expand CI/CD.
+
+A little about code analysis tools:
+
+#### Bandit:
+Bandit is a tool designed to find common security issues in Python code. To do this Bandit processes each file, builds an AST from it, and runs appropriate plugins against the AST nodes. Once Bandit has finished scanning all the files it generates a report.
+
+#### Safety:
+Safety checks Python dependencies for known security vulnerabilities and suggests the proper remediations for vulnerabilities detected. Safety can be run on developer machines, in CI/CD pipelines and on production systems.
+
+**Why use these tools?** With bandit you can catch the most common security problems in the code, while Safety tracks vulnerabilities in the packages used, where you don't have as much control when deciding to use a package in your project.
+
+### Running workflow
+In the github actions tab, you will have the "Workflow - Security Check and Tests" workflow.
+Now just run pointing to the desired branch.
+
+#### The results will come in the following way
+After running the workflow, and entering execution you will have the following sections on the page after annotations: 
+
+**Bandit and Safety - (Artifacts):**
+Bandit and Safety output set, generates a zip file containing Bandit's HTML and Safety text file.
+
+**Pytest - (is a section that contains the name tests and next to the python version used):**
+The output of pytest is xml but using pmeier/pytest-results-action within the workflow it is possible to convert this xml to output next to the workflow execution page.
 
 Useful Links
 ============
